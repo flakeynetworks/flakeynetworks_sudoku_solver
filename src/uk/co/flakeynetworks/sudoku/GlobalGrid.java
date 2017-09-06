@@ -1,6 +1,6 @@
 package uk.co.flakeynetworks.sudoku;
 
-import uk.co.flakeynetworks.sudoku.examples.ExampleGrids;
+import uk.co.flakeynetworks.sudoku.methods.CalculatePossibilities;
 import uk.co.flakeynetworks.sudoku.methods.LocalGridScope;
 import uk.co.flakeynetworks.sudoku.methods.Method;
 import uk.co.flakeynetworks.sudoku.methods.SingleNumberScope;
@@ -134,6 +134,9 @@ public class GlobalGrid {
         
         boolean progress = true;
         
+        // First calculate all the possibilities.
+        CalculatePossibilities.calculate(this);
+        
         // Keep going until no more progress can be made.
         while(progress) {
             
@@ -149,4 +152,21 @@ public class GlobalGrid {
         
         return false;
     } // end of solve
+
+    
+    public void removePossibility(int globalRow, int localRow, int globalColumn, int localColumn, int number) {
+    
+        // Validate the indexes
+        if(globalRow < 0 || globalRow > 2) return;
+        if(globalColumn < 0 || globalColumn > 2) return;
+        if(localRow < 0 || localRow > 2) return;
+        if(localColumn < 0 || localColumn > 2) return;
+        
+        // Go through all the indexes in the row and column and remove the possibilities.
+        for(int i = 0; i < 3; i++) {
+            
+            getLocal(globalRow, i).removePossibilityFromRow(localRow, number);
+            getLocal(i, globalColumn).removePossibilityFromColumn(localColumn, number);
+        } // end of for
+    } // end of removePossibility
 } // end of GlobalGrid

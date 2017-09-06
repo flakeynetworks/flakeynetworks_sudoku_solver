@@ -17,14 +17,21 @@ public class Engine {
         System.out.println("\nStarting Grid:");
         global.printGrid();
         
+        long startTime = System.currentTimeMillis();
+        
         boolean solved = global.solve();
+        
+        long endTime = System.currentTimeMillis();
         
         System.out.println("\n\nFurtherest Point: ");
        
         global.printGrid();
         
+        System.out.println("Time taken: " + (endTime - startTime) + " ms");
+        
         return solved;
     } // end of solveGrid
+    
     
     /**
      * @param args the command line arguments

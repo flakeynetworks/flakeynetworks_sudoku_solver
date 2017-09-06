@@ -33,30 +33,7 @@ public class LocalGridScope implements Method {
         
         if(grid == null) return false;
         
-        grid.clearTempPossibilites();
-        
-        // Go through all the rows i.
-        for(int i = 0; i < 3; i++) {
-            
-            // Go through all the columns j.
-            for(int j = 0; j < 3; j++) {
-        
-                // Go through all the possible numbers k.
-                for(int k = 1; k < 10; k++) {
-                    
-                    // Check if this square has been solve yet.
-                    if(grid.getNumber(i, j) != 0) continue;
-                    
-                    Possibilities pos = grid.getTempPossibilities(i, j);
-                    
-                    // Check if k is a possibility.
-                    if(grid.isPossible(i, j, k))
-                        pos.addPossibilities(k);
-                } // end of for
-            } // end of for
-        } // end of for
-        
-        
+    
         // Go through all the squares and then check for any squares that only
         // one possibility.
         // Row i
@@ -69,7 +46,7 @@ public class LocalGridScope implements Method {
                 if(grid.getNumber(i, j) != 0) continue;
                 
                 // Check if there is only one possibility left.
-                Possibilities pos = grid.getTempPossibilities(i, j);
+                Possibilities pos = grid.getPossibilities(i, j);
                 if(pos.getNumberOfPossibilities() == 1) {
                     
                     grid.setNumber(i, j, pos.getPossibilities().get(0));

@@ -15,6 +15,9 @@ public class LocalGrid {
     
     private GlobalGrid global;
     
+    private Possibilities[] possibilities = {new Possibilities(), new Possibilities(), new Possibilities(),
+                                                new Possibilities(), new Possibilities(), new Possibilities(),
+                                                new Possibilities(), new Possibilities(), new Possibilities()};
     
     private Possibilities[] tempPossibilities = {new Possibilities(), new Possibilities(), new Possibilities(),
                                                 new Possibilities(), new Possibilities(), new Possibilities(),
@@ -61,7 +64,27 @@ public class LocalGrid {
         // Make sure we are settings an index within the correct range.
         if(index < 0 || index > (numbers.length - 1)) return false;
         
+        // If the number has already been set the do not change.
+        if(numbers[index] != 0) return false;
+        
         numbers[index] = number;
+        
+        // Remove this number from other possibilities.
+        
+        // Remove all the possibilities from the square.
+        possibilities[index].clear();
+        
+        // Remove all the temp possibilities
+        tempPossibilities[index].clear();
+        
+        // Remove from this grid.
+        for(Possibilities pos: possibilities)
+            pos.removePossibility(number);
+
+        // Remove from the global grid entire row and entire column
+        int localRow = index / 3;
+        int localColumn = index % 3;
+        global.removePossibility(globalRow, localRow, globalColumn, localColumn, number);
         
         return true;
     } // end of setNumber
@@ -196,4 +219,47 @@ public class LocalGrid {
         
         return tempPossibilities[index];
     } // end of getTempPossibilities
+
+    
+    public void clearPossibilities() {
+        
+        for(Possibilities pos: possibilities)
+            pos.clear();
+    } // end of clearPossibilities
+    
+
+    public Possibilities getPossibilities(int index) {
+        
+         if(index < 0 || index > 9) return null;
+        
+        return possibilities[index];
+    } // end of if
+    
+    
+    public Possibilities getPossibilities(int row, int column) {
+        
+        return getPossibilities((row * 3) + column);
+    } // end of getPossibilities
+
+    
+    public void removePossibilityFromRow(int localRow, int number) {
+        
+        // Validate the localRow
+        if(localRow < 0 || localRow > 2) return;
+        
+        // Go through all the squares in row localRow in column i.
+        for(int i = 0; i < 3; i++)
+            possibilities[(localRow * 3) + i].removePossibility(number);
+    } // end of removePossibilityFromRow
+
+    
+    public void removePossibilityFromColumn(int localColumn, int number) {
+        
+        // Validate the localColumn
+        if(localColumn < 0 || localColumn > 2) return;
+        
+         // Go through all the squares in row i in the column local column.
+        for(int i = 0; i < 3; i++)
+            possibilities[(i * 3) + localColumn].removePossibility(number);
+    } // end of removePossibilityFromColumn
 } // end of LocalGrid
