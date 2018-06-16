@@ -1,6 +1,6 @@
 package uk.co.flakeynetworks.sudoku;
 
-import uk.co.flakeynetworks.sudoku.examples.ExampleGrid;
+import uk.co.flakeynetworks.sudoku.examples.Grid;
 import uk.co.flakeynetworks.sudoku.examples.ExampleGrids;
 
 /**
@@ -10,7 +10,7 @@ import uk.co.flakeynetworks.sudoku.examples.ExampleGrids;
 public class Engine {
 
     
-    public static boolean solveGrid(ExampleGrid grid) {
+    public static boolean solveGrid(Grid grid) {
         
         GlobalGrid global = new GlobalGrid(grid.getGrid());
         

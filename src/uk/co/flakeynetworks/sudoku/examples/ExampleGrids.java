@@ -7,7 +7,7 @@ package uk.co.flakeynetworks.sudoku.examples;
 public class ExampleGrids {
     
     // Number 10 in the book.
-    public static final ExampleGrid EXAMPLE_GRID_0 = new ExampleGrid(new int[] {
+    public static final Grid EXAMPLE_GRID_0 = new Grid(new int[] {
         7,0,4,1,0,0,0,5,0,
         0,0,0,3,0,0,1,0,0,
         3,0,0,0,5,0,0,2,0,
@@ -31,7 +31,7 @@ public class ExampleGrids {
     
     
     // Number 11 in the book.
-    public static final ExampleGrid EXAMPLE_GRID_1 = new ExampleGrid(new int[] {
+    public static final Grid EXAMPLE_GRID_1 = new Grid(new int[] {
         6,0,5,4,0,0,0,2,0,
         0,0,0,0,6,0,0,4,0,
         0,0,7,1,5,0,3,0,9,
@@ -54,7 +54,7 @@ public class ExampleGrids {
     }, "Number 11 in the book.");
     
     // Number 500 in the book.
-     public static final ExampleGrid EXAMPLE_GRID_2 = new ExampleGrid(new int[] {
+     public static final Grid EXAMPLE_GRID_2 = new Grid(new int[] {
         0,0,0,1,8,0,0,0,9,
         0,0,0,0,0,0,8,0,0,
         0,7,0,9,0,0,0,0,1,
@@ -76,7 +76,7 @@ public class ExampleGrids {
         2,5,7,6,4,3,1,9,8
     }, "Number 500 in the book.");
     
-   public static final ExampleGrid EXAMPLE_GRID_3 = new ExampleGrid(new int[] {
+   public static final Grid EXAMPLE_GRID_3 = new Grid(new int[] {
        0,0,9,4,0,0,0,3,0,
        8,0,0,0,2,0,4,0,0,
        2,5,0,0,0,0,0,0,7,
@@ -98,7 +98,7 @@ public class ExampleGrids {
         3,2,1,8,4,9,5,7,6,
     }, "Number 499 in the book.");
    
-   public static final ExampleGrid EXAMPLE_GRID_4 = new ExampleGrid(new int[] {
+   public static final Grid EXAMPLE_GRID_4 = new Grid(new int[] {
        0,4,0,0,8,0,0,0,2,
        0,0,0,0,0,3,8,0,0,
        0,0,9,2,0,0,0,0,3,
@@ -120,7 +120,7 @@ public class ExampleGrids {
         7,1,2,4,9,6,3,5,8
     }, "Number 498 in the book.");
    
-   public static final ExampleGrid EXAMPLE_GRID_5 = new ExampleGrid(new int[] {
+   public static final Grid EXAMPLE_GRID_5 = new Grid(new int[] {
        0,2,1,0,0,0,0,0,6,
        0,0,0,9,0,7,3,0,1,
        0,0,0,0,0,2,7,0,0,

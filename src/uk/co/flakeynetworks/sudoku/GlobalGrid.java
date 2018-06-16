@@ -74,7 +74,8 @@ public class GlobalGrid {
 
     
     public void printGrid() {
-        
+
+        // i is row
         for(int i = 0; i < 9; i++) {
             
             // Print a diverse at the top of each local grid
@@ -84,7 +85,8 @@ public class GlobalGrid {
                 System.out.println("  |-----------+-----------+-----------|");
             else
                 System.out.println("  |           |           |           | ");
-            
+
+            // j is column
             for(int j = 0; j < 9; j++) {
                 
                 int globalLocalRow = (int) (i / 3);
