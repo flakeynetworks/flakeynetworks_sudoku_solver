@@ -150,9 +150,43 @@ public class GlobalGrid {
             } // end of for
         } // end of while
         
+        // Check to see if the grid has been solved.
         return false;
     } // end of solve
 
+    
+    public boolean isSolved() {
+        
+        // Go through all local grids
+        for(int i = 0; i < 9; i++) {
+            
+            for(int j = 0; j < 9; j++) {
+                if(grids[i].getNumber(i) == 0) return false;
+            } // end of for
+        } // end of for
+        
+        return true;
+    } // end of isSolved
+    
+    
+    public int[] getGrid() {
+        
+        int[] grid = new int[81];
+        
+        for(int i = 0; i < 3; i++) {
+            
+            for(int z = 0; z < 3; z++) {
+                
+                for(int j = 0; j < 9; j++) {
+                    
+                    grid[(i*3 + z) * 9 + j] = grids[(i * 3) + (j / 3)].getNumber(z, j % 3);
+                } // end of for
+            } // end of for
+        } // end of for
+        
+        return grid;
+    } // end of getGrid
+    
     
     public void removePossibility(int globalRow, int localRow, int globalColumn, int localColumn, int number) {
     

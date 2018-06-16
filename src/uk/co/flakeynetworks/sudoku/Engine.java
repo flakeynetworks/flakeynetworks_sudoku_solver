@@ -1,5 +1,6 @@
 package uk.co.flakeynetworks.sudoku;
 
+import uk.co.flakeynetworks.sudoku.examples.ExampleGrid;
 import uk.co.flakeynetworks.sudoku.examples.ExampleGrids;
 
 /**
@@ -9,13 +10,11 @@ import uk.co.flakeynetworks.sudoku.examples.ExampleGrids;
 public class Engine {
 
     
-    public static boolean solveGrid(int[] grid) {
+    public static boolean solveGrid(ExampleGrid grid) {
         
-        GlobalGrid global = new GlobalGrid(grid);
-        System.out.println("Finished preparing grid");
+        GlobalGrid global = new GlobalGrid(grid.getGrid());
         
-        System.out.println("\nStarting Grid:");
-        global.printGrid();
+        System.out.println("\n\nSolving Grid: " + grid.getDescription());
         
         long startTime = System.currentTimeMillis();
         
@@ -23,9 +22,19 @@ public class Engine {
         
         long endTime = System.currentTimeMillis();
         
-        System.out.println("\n\nFurtherest Point: ");
-       
-        global.printGrid();
+
+        // Check if solved.
+        if(grid.isCorrect(global.getGrid())) {
+            if(global.isSolved()) {
+                System.out.println("Grid has been solved: ");
+            } else {
+                System.out.println("Furtherest Point: ");
+                global.printGrid();
+            } // end of else
+        } else {
+            System.out.println("Error! Solution does not match solution: ");
+            global.printGrid();
+        } // end of else
         
         System.out.println("Time taken: " + (endTime - startTime) + " ms");
         
@@ -38,6 +47,11 @@ public class Engine {
      */
     public static void main(String[] args) {
        
-        solveGrid(ExampleGrids.EXAMPLE_GRID_6);
+        solveGrid(ExampleGrids.EXAMPLE_GRID_0);
+        solveGrid(ExampleGrids.EXAMPLE_GRID_1);
+        solveGrid(ExampleGrids.EXAMPLE_GRID_2);
+        solveGrid(ExampleGrids.EXAMPLE_GRID_3);
+        solveGrid(ExampleGrids.EXAMPLE_GRID_4);
+        solveGrid(ExampleGrids.EXAMPLE_GRID_5);
     } // end of main
 } // end of Engine

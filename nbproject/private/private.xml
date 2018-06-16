@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/methods/SolveLine.java</file>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/examples/ExampleGrids.java</file>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/methods/SingleNumberScope.java</file>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/LocalGrid.java</file>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/Engine.java</file>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/GlobalGrid.java</file>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/Possibilities.java</file>
-            <file>file:/C:/Users/richard/Documents/NetBeansProjects/SudokuEngine/src/uk/co/flakeynetworks/sudoku/methods/LocalGridScope.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
