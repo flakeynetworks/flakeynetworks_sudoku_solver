@@ -6,7 +6,7 @@ import uk.co.flakeynetworks.sudoku.GlobalGrid;
  *
  * @author Richard Stokes
  */
-public class ExampleGrid {
+public class Grid {
     
     
     private final int[] grid;
@@ -15,7 +15,7 @@ public class ExampleGrid {
     private final String description;
     
     
-    public ExampleGrid(int[] grid, int[] solution, String description) {
+    public Grid(int[] grid, int[] solution, String description) {
         
         this.grid = grid;
         this.solution = solution;
@@ -53,4 +53,6 @@ public class ExampleGrid {
         
         return true;
     } // end of isCorrect
-} // end of ExampleGrid
+
+    public String toString() { return description; } // end of toString
+} // end of Grid
